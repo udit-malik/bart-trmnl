@@ -11,7 +11,7 @@
 
         <!-- Summary Card -->
         <div class="item bg--white rounded--base mt--4 p--2" style="border: 2px solid #000; flex: 1;">
-          <div class="content layout layout--col gap--small">
+          <div class="content flex flex--col gap--small">
             <div class="title title--large clamp--1">{{ origin_name }} → {{ destination_name }}</div>
             {% assign seen = "" %}
             {% for trip in trips limit:4 %}
@@ -41,7 +41,7 @@
         {% elsif heading_lower contains 'richmond' %}{% assign abbr = 'RICH' %}
         {% else %}{% assign abbr = main_trip.leg['@trainHeadStation'] %}{% endif %}
         <div class="item bg--black rounded--medium p--2" style="flex: 2;">
-          <div class="content layout layout--col gap--small">
+          <div class="content flex flex--col gap--small">
             <span class="label bg--white rounded--small p--1" style="align-self: flex-start;">{{ abbr }}</span>
             <div class="value value--xxlarge text--white">{{ main_trip['@origTimeMin'] }}</div>
             <div class="label text--gray-60">DEPART</div>
@@ -61,7 +61,7 @@
           {% elsif heading_lower contains 'richmond' %}{% assign abbr = 'RICH' %}
           {% else %}{% assign abbr = trip.leg['@trainHeadStation'] %}{% endif %}
           <div class="item bg--black rounded--medium p--2" style="flex: 1;">
-            <div class="content layout layout--col gap--small">
+            <div class="content flex flex--col gap--small">
               <span class="label bg--white rounded--small p--1" style="align-self: flex-start;">{{ abbr }}</span>
               <div class="value value--large text--white">{{ trip['@origTimeMin'] }}</div>
               <div style="border-top: 1px dashed rgba(255,255,255,0.3); width: 100%; margin: 2px 0;"></div>
@@ -74,7 +74,7 @@
     </div>
   {% else %}
     <div class="item">
-      <div class="content layout layout--col gap--small">
+      <div class="content flex flex--col gap--small">
         <div class="label">No departures available</div>
         {% if root.message.error %}<div class="label label--small">{{ root.message.error.text }}</div>{% endif %}
       </div>
