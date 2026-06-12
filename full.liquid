@@ -1,7 +1,5 @@
 {% assign origin_name = "12th St. Oakland" %}
 {% assign destination_name = "16th St. Mission" %}
-{% assign train_b64 = "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjxzdmcKICAgdmVyc2lvbj0iMS4xIgogICB4PSIwcHgiCiAgIHk9IjBweCIKICAgdmlld0JveD0iLTkuNjkzIDAuMDYzIDk2LjY1ODAwMSAxMDAiCiAgIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgLTkuNjkzIDAuMDYzIDk2LjY1OSAxMDAiCiAgIHhtbDpzcGFjZT0icHJlc2VydmUiCiAgIGlkPSJzdmc4IgogICB3aWR0aD0iOTYuNjU3OTk3IgogICBoZWlnaHQ9IjEwMCIKICAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aAogICAgIGQ9Ik0gODYuMDIyLDQ2Ljc5NiA4MS4yNDMsMTMuMzI3IEMgODAuNzI0LDkuNyA3Ny42MTYsNS4zODggNzQuMzM3LDMuNzQ4IGMgMCwwIC03LjM3MSwtMy42ODUgLTM0LjAyOSwtMy42ODUgLTI2LjY2NywwIC0zNy4zNzEsMy42ODUgLTM3LjM3MSwzLjY4NSAtMy4yOCwxLjY0IC02LjM4OSw1Ljk1MiAtNi45MDcsOS41NzkgbCAtNC43NzksMzMuNDY5IGMgLTAuNTE5LDMuNjI3IC0wLjk0NCw5LjYwMiAtMC45NDQsMTMuMjY4IDAsLTMuNjY2IDEuMzQ2LDkuMzQzIDIuOTc4LDEyLjYyMiBsIDAuNzA0LDEuNDA3IGMgMS42NDcsMy4yNzkgNS44OTMsNi42OTcgOS40NTEsNy41NzkgbCAzLjUzNSwwLjg5IHYgNy40OTQgTCAzLjY0LDEwMC4wNjMgaCA2LjY2NyBsIDIuMjIsLTYuNjY3IGggNTIuMjE5IGwgMi4yMiw2LjY2NyBoIDYuNjY3IEwgNzAuMyw5MC4wNTYgViA4Mi41NjIgbCAzLjUzNCwtMC44OSBjIDMuNTU4LC0wLjg4MiA3LjgxMiwtNC4zIDkuNDUxLC03LjU3OSBsIDAuNjk1LC0xLjQwNyBjIDEuNjQsLTMuMjc5IDIuOTg1LC04Ljk1NiAyLjk4NSwtMTIuNjIyIDAsLTMuNjY2IC0wLjQyNCwtOS42NDEgLTAuOTQzLC0xMy4yNjggeiBtIC04MC43MTksMjYuNiBjIC0yLjc2MSwwIC00Ljk5NiwtMi4yNDIgLTQuOTk2LC01LjAwNCAwLC0yLjc2MSAyLjIzNSwtNS4wMDQgNC45OTYsLTUuMDA0IDIuNzYxLDAgNS4wMDQsMi4yNDMgNS4wMDQsNS4wMDQgMCwyLjc2MiAtMi4yNDMsNS4wMDQgLTUuMDA0LDUuMDA0IHogTSA0Mi41MjcsNTAuNzI5IGMgMCwxLjQ2NiAtMS4xOTksMi42NjQgLTIuNjY5LDIuNjY0IEggMi42MDQgYyAtMS40NywwIC0yLjUyMSwtMS4xODcgLTIuMzQ0LC0yLjY0NSBMIDQuNTc1LDE2LjA0MiBjIDAuMTg2LC0xLjQ1NCAxLjUzMiwtMi42NDUgMi45OTMsLTIuNjQ1IGggMzIuMjg5IGMgMS40NjIsMCAyLjY2OSwxLjE5OSAyLjY2OSwyLjY2NCB2IDM0LjY2OCB6IG0gMjkuNDQyLDIyLjY2NyBjIC0yLjc2MSwwIC01LjAwNCwtMi4yNDIgLTUuMDA0LC01LjAwNCAwLC0yLjc2MSAyLjI0MywtNS4wMDQgNS4wMDQsLTUuMDA0IDIuNzYyLDAgNC45OTYsMi4yNDMgNC45OTYsNS4wMDQgMCwyLjc2MiAtMi4yMzQsNS4wMDQgLTQuOTk2LDUuMDA0IHoiIC8+PC9zdmc+" %}
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 
 <div class="layout layout--col gap--small">
   {% if root.schedule.request.trip %}
@@ -12,12 +10,9 @@
       <div class="layout layout--col gap--small col--span-2 m--2">
 
         <!-- Summary Card -->
-        <div class="item bg--white rounded--base mt--4 p--2" style="border: 2px solid #000; flex: 1.5;">
-          <div class="content grid grid--cols-12 gap--small">
-            <i class="bi bi-geo-alt-fill value--small col--span-1 self--center"></i>
-            <div class="title title--large pt--2 col--span-11 clamp--1">{{ origin_name }}</div>
-            <i class="bi bi-geo-fill value--small self--center col--span-1"></i>
-            <div class="title title--large pt--2 col--span-11 clamp--1">{{ destination_name }}</div>
+        <div class="item bg--white rounded--base mt--4 p--2" style="border: 2px solid #000; flex: 1;">
+          <div class="content layout layout--col gap--small">
+            <div class="title title--large clamp--1">{{ origin_name }} → {{ destination_name }}</div>
             {% assign seen = "" %}
             {% for trip in trips limit:4 %}
               {% assign heading_lower = trip.leg['@trainHeadStation'] | downcase %}
@@ -28,10 +23,9 @@
               {% else %}{% assign abbr = trip.leg['@trainHeadStation'] %}{% endif %}
               {% unless seen contains abbr %}
                 {% assign seen = seen | append: abbr | append: "|" %}
-                <img class="image image-stroke--small self--center col--span-1" src="data:image/svg+xml;base64,{{ train_b64 }}">
-                <div class="flex flex--middle pt--2 col--span-11">
-                  <span class="label label--large label--outline">{{ abbr }}</span>
-                  <span class="label label--filled">{{ trip['@tripTime'] }} min</span>
+                <div class="flex flex--middle gap--small">
+                  <span class="label label--outline">{{ abbr }}</span>
+                  <span class="label">{{ trip['@tripTime'] }} min</span>
                 </div>
               {% endunless %}
             {% endfor %}
@@ -47,17 +41,12 @@
         {% elsif heading_lower contains 'richmond' %}{% assign abbr = 'RICH' %}
         {% else %}{% assign abbr = main_trip.leg['@trainHeadStation'] %}{% endif %}
         <div class="item bg--black rounded--medium p--2" style="flex: 2;">
-          <div class="content flex flex--row gap--medium">
-            <div class="flex flex--col gap--medium pt--2 m--2 flex--middle self--center" style="min-width: 20px;">
-              <img class="image image-stroke--small" src="data:image/svg+xml;base64,{{ train_b64 }}">
-              <i class="bi bi-geo-alt-fill text--gray-40 value--large"></i>
-              <i class="bi bi-geo-fill text--gray-40 value--large"></i>
-            </div>
-            <div class="flex flex--col flex--left pl--2 pt--4 gap--medium grow">
-              <span class="label label--xxlarge bg--white rounded--small p--1">{{ abbr }}</span>
-              <div class="value value--xxlarge text--white">{{ main_trip['@origTimeMin'] }}</div>
-              <div class="value value--medium text--gray-60">{{ main_trip['@destTimeMin'] }}</div>
-            </div>
+          <div class="content layout layout--col gap--small">
+            <span class="label bg--white rounded--small p--1" style="align-self: flex-start;">{{ abbr }}</span>
+            <div class="value value--xxlarge text--white">{{ main_trip['@origTimeMin'] }}</div>
+            <div class="label text--gray-60">DEPART</div>
+            <div style="border-top: 1px dashed rgba(255,255,255,0.3); width: 100%; margin: 2px 0;"></div>
+            <div class="label text--gray-60">ARRIVE {{ main_trip['@destTimeMin'] }}</div>
           </div>
         </div>
       </div>
@@ -72,17 +61,11 @@
           {% elsif heading_lower contains 'richmond' %}{% assign abbr = 'RICH' %}
           {% else %}{% assign abbr = trip.leg['@trainHeadStation'] %}{% endif %}
           <div class="item bg--black rounded--medium p--2" style="flex: 1;">
-            <div class="content flex flex--row gap--small">
-              <div class="flex flex--col gap--medium pt--2 m--1 flex--center-y" style="min-width: 25px;">
-                <img class="image image-stroke--small" src="data:image/svg+xml;base64,{{ train_b64 }}">
-                <i class="bi bi-geo-alt-fill text--gray-40 value--small"></i>
-                <i class="bi bi-geo-fill text--gray-40 value--small"></i>
-              </div>
-              <div class="flex flex--col flex--left pl--2 pt--2 gap--small flex--center-y">
-                <span class="label bg--white label--large rounded--small p--1">{{ abbr }}</span>
-                <div class="value value--medium text--white">{{ trip['@origTimeMin'] }}</div>
-                <div class="title text--gray-60 pl--1 pb--2">{{ trip['@destTimeMin'] }}</div>
-              </div>
+            <div class="content layout layout--col gap--small">
+              <span class="label bg--white rounded--small p--1" style="align-self: flex-start;">{{ abbr }}</span>
+              <div class="value value--large text--white">{{ trip['@origTimeMin'] }}</div>
+              <div style="border-top: 1px dashed rgba(255,255,255,0.3); width: 100%; margin: 2px 0;"></div>
+              <div class="label text--gray-60">ARRIVE {{ trip['@destTimeMin'] }}</div>
             </div>
           </div>
         {% endfor %}
@@ -91,9 +74,8 @@
     </div>
   {% else %}
     <div class="item">
-      <div class="content layout--col gap--small">
-        <div class="value value--xlarge">⚠️</div>
-        <div class="label label--small">No departures available</div>
+      <div class="content layout layout--col gap--small">
+        <div class="label">No departures available</div>
         {% if root.message.error %}<div class="label label--small">{{ root.message.error.text }}</div>{% endif %}
       </div>
     </div>
@@ -101,6 +83,6 @@
 
   <div class="footer">
     <div class="divider"></div>
-    <div class="label label--small">Live BART · Real-time departures</div>
+    <div class="label label--small">Real-time BART schedule</div>
   </div>
 </div>
