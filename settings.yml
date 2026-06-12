@@ -1,0 +1,19 @@
+---
+strategy: polling
+no_screen_padding: 'no'
+dark_mode: 'no'
+static_data: ''
+polling_verb: get
+framework_version: 2.3.7
+serverless_language: ''
+polling_url: https://bart-trmnl.vercel.app/api
+polling_headers: ''
+polling_body: ''
+custom_fields:
+- keyname: show_icons
+  field_type: boolean
+  default: false
+  name: Show Icons
+  description: Display train and location icons next to departure times
+name: BART Live — 12th St → 16th St Mission
+refresh_interval: 15

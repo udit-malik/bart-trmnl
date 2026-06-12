@@ -1,0 +1,50 @@
+{% assign origin_name = "12th St. Oakland" %}
+{% assign destination_name = "16th St. Mission" %}
+{% assign train_b64 = "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjxzdmcKICAgdmVyc2lvbj0iMS4xIgogICB4PSIwcHgiCiAgIHk9IjBweCIKICAgdmlld0JveD0iLTkuNjkzIDAuMDYzIDk2LjY1ODAwMSAxMDAiCiAgIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgLTkuNjkzIDAuMDYzIDk2LjY1OSAxMDAiCiAgIHhtbDpzcGFjZT0icHJlc2VydmUiCiAgIGlkPSJzdmc4IgogICB3aWR0aD0iOTYuNjU3OTk3IgogICBoZWlnaHQ9IjEwMCIKICAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aAogICAgIGQ9Ik0gODYuMDIyLDQ2Ljc5NiA4MS4yNDMsMTMuMzI3IEMgODAuNzI0LDkuNyA3Ny42MTYsNS4zODggNzQuMzM3LDMuNzQ4IGMgMCwwIC03LjM3MSwtMy42ODUgLTM0LjAyOSwtMy42ODUgLTI2LjY2NywwIC0zNy4zNzEsMy42ODUgLTM3LjM3MSwzLjY4NSAtMy4yOCwxLjY0IC02LjM4OSw1Ljk1MiAtNi45MDcsOS41NzkgbCAtNC43NzksMzMuNDY5IGMgLTAuNTE5LDMuNjI3IC0wLjk0NCw5LjYwMiAtMC45NDQsMTMuMjY4IDAsLTMuNjY2IDEuMzQ2LDkuMzQzIDIuOTc4LDEyLjYyMiBsIDAuNzA0LDEuNDA3IGMgMS42NDcsMy4yNzkgNS44OTMsNi42OTcgOS40NTEsNy41NzkgbCAzLjUzNSwwLjg5IHYgNy40OTQgTCAzLjY0LDEwMC4wNjMgaCA2LjY2NyBsIDIuMjIsLTYuNjY3IGggNTIuMjE5IGwgMi4yMiw2LjY2NyBoIDYuNjY3IEwgNzAuMyw5MC4wNTYgViA4Mi41NjIgbCAzLjUzNCwtMC44OSBjIDMuNTU4LC0wLjg4MiA3LjgxMiwtNC4zIDkuNDUxLC03LjU3OSBsIDAuNjk1LC0xLjQwNyBjIDEuNjQsLTMuMjc5IDIuOTg1LC04Ljk1NiAyLjk4NSwtMTIuNjIyIDAsLTMuNjY2IC0wLjQyNCwtOS42NDEgLTAuOTQzLC0xMy4yNjggeiBtIC04MC43MTksMjYuNiBjIC0yLjc2MSwwIC00Ljk5NiwtMi4yNDIgLTQuOTk2LC01LjAwNCAwLC0yLjc2MSAyLjIzNSwtNS4wMDQgNC45OTYsLTUuMDA0IDIuNzYxLDAgNS4wMDQsMi4yNDMgNS4wMDQsNS4wMDQgMCwyLjc2MiAtMi4yNDMsNS4wMDQgLTUuMDA0LDUuMDA0IHogTSA0Mi41MjcsNTAuNzI5IGMgMCwxLjQ2NiAtMS4xOTksMi42NjQgLTIuNjY5LDIuNjY0IEggMi42MDQgYyAtMS40NywwIC0yLjUyMSwtMS4xODcgLTIuMzQ0LC0yLjY0NSBMIDQuNTc1LDE2LjA0MiBjIDAuMTg2LC0xLjQ1NCAxLjUzMiwtMi42NDUgMi45OTMsLTIuNjQ1IGggMzIuMjg5IGMgMS40NjIsMCAyLjY2OSwxLjE5OSAyLjY2OSwyLjY2NCB2IDM0LjY2OCB6IG0gMjkuNDQyLDIyLjY2NyBjIC0yLjc2MSwwIC01LjAwNCwtMi4yNDIgLTUuMDA0LC01LjAwNCAwLC0yLjc2MSAyLjI0MywtNS4wMDQgNS4wMDQsLTUuMDA0IDIuNzYyLDAgNC45OTYsMi4yNDMgNC45OTYsNS4wMDQgMCwyLjc2MiAtMi4yMzQsNS4wMDQgLTQuOTk2LDUuMDA0IHoiIC8+PC9zdmc+" %}
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+<div class="layout layout--col gap--small" style="width: 100%;">
+  {% if root.schedule.request.trip %}
+    {% assign trips = root.schedule.request.trip %}
+    <div class="grid grid--cols-2 gap--small">
+      {% for trip in trips limit:6 %}
+        <div class="item bg--black rounded--medium pb--1 pt--1 pl--2">
+          <div class="content flex flex--row gap--small">
+            {% if trmnl.plugin_settings.custom_fields_values.show_icons == 'true' %}
+            <div class="flex flex--col gap--large m--1 pt--1 flex--center-y" style="min-width: 25px;">
+              <img class="image image-stroke--small" src="data:image/svg+xml;base64,{{ train_b64 }}">
+              <i class="bi bi-geo-alt-fill text--gray-40 value--xsmall"></i>
+              <i class="bi bi-geo-fill text--gray-40 value--xsmall"></i>
+            </div>
+            {% endif %}
+            <div class="flex flex--col flex--left pl--2 pt--2 gap--medium flex--center-y">
+              {% assign heading_lower = trip.leg['@trainHeadStation'] | downcase %}
+              {% if heading_lower contains 'richmond' %}{% assign abbreviation = 'RICH' %}
+              {% elsif heading_lower contains 'millbrae' %}{% assign abbreviation = 'MLBR' %}
+              {% elsif heading_lower contains 'dublin' %}{% assign abbreviation = 'DUBL' %}
+              {% elsif heading_lower contains 'berryessa' %}{% assign abbreviation = 'BERY' %}
+              {% elsif heading_lower contains 'daly' %}{% assign abbreviation = 'DALY' %}
+              {% elsif heading_lower contains 'sfo' or heading_lower contains 'francisco inter' %}{% assign abbreviation = 'SFIA' %}
+              {% else %}{% assign abbreviation = trip.leg['@trainHeadStation'] %}{% endif %}
+              <span class="label bg--white label--large rounded--small p--1">{{ abbreviation }}</span>
+              <div class="value value--small text--white">{{ trip['@origTimeMin'] }}</div>
+              <div class="label label--xxsmall pl--1 text--gray-40 pb--2">{{ trip['@destTimeMin'] }}</div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <div class="item">
+      <div class="content layout--col gap--small">
+        <div class="value value--xlarge">⚠️</div>
+        <div class="label label--small">No departures available</div>
+        {% if root.message.error %}<div class="label label--small">{{ root.message.error.text }}</div>{% endif %}
+      </div>
+    </div>
+  {% endif %}
+</div>
+<div class="title_bar rounded bg--white" style="border: 2px solid #000">
+  <img class="image image-stroke--small" src="data:image/svg+xml;base64,{{ train_b64 }}">
+  <span class="title">{{ origin_name }} → {{ destination_name }}</span>
+</div>
